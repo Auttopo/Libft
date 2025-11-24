@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	value;
-	int	sign;
+	size_t	i;
+	size_t	value;
+	int		sign;
 
 	i = 0;
 	value = 0;
@@ -29,12 +29,16 @@ int	ft_atoi(const char *nptr)
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (value < ((value * 10) - (nptr[i] - '0'))
-			|| (((value * 10) - (nptr[i] - '0')) == -2147483648
-				&& sign == -1))
-			return (0);
 		value = (value * 10) - (nptr[i] - '0');
 		i++;
 	}
 	return (value * sign);
 }
+/*
+int main()
+{
+	char *tbl = "-2147483649";
+	__builtin_printf("%d\n", ft_atoi(tbl));
+	__builtin_printf("%d\n", atoi(tbl));
+}
+*/
