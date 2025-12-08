@@ -14,7 +14,7 @@
 
 static char	**free_all(char **list)
 {
-	size_t	i;
+	ssize_t	i;
 
 	i = 0;
 	while (list[i] != NULL)
@@ -26,10 +26,10 @@ static char	**free_all(char **list)
 	return (NULL);
 }
 
-static char	*add_elem(char const *ary, size_t start, size_t size)
+static char	*add_elem(char const *ary, ssize_t start, ssize_t size)
 {
 	char	*elem;
-	size_t	i;
+	ssize_t	i;
 
 	i = 0;
 	elem = malloc(sizeof(char) * (size));
@@ -47,8 +47,8 @@ static char	*add_elem(char const *ary, size_t start, size_t size)
 static char	**incr_list(char **list, char *elem)
 {
 	char	**biger;
-	size_t	size;
-	size_t	i;
+	ssize_t	size;
+	ssize_t	i;
 
 	i = 0;
 	size = 0;
@@ -76,8 +76,8 @@ static char	**incr_list(char **list, char *elem)
 char	**ft_split(char const *s, char c)
 {
 	char	**list;
-	size_t	i;
-	size_t	sep;
+	long long	i;
+	ssize_t	sep;
 
 	i = 0;
 	sep = -1;
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	if (list == NULL)
 		return (NULL);
 	list[0] = NULL;
-	while (i < ft_strlen(s) + 1)
+	while (i < (long long)ft_strlen(s) + 1)
 	{
 		if (s[i] == c || s[i] == '\0')
 		{

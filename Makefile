@@ -23,10 +23,10 @@ $(BONUSNAME) : $(BONUSOBJ) $(NAME)
 	touch $(BONUSNAME)
 
 clean :
-	$(RM) $(OBJ) $(BONUSOBJ)
+	$(RM) $(OBJ) $(BONUSOBJ) $(BONUSNAME)
 	
 fclean :
-	$(RM) $(NAME) $(OBJ) $(BONUSOBJ)
+	$(RM) $(NAME) $(OBJ) $(BONUSOBJ) $(BONUSNAME)
 
 re : fclean all
 
